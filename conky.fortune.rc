@@ -1,0 +1,42 @@
+## Base
+background yes
+use_xft yes
+xftfont WenQuanYi Micro Hei Mono:size=11
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+
+## Window
+own_window yes
+own_window_transparent yes
+own_window_type override
+own_window_colour 111111
+own_window_argb_visual true
+own_window_argb_value 50
+double_buffer yes
+
+no_buffers yes
+
+## Text
+override_utf8_locale yes
+text_buffer_size 256
+max_user_text 4096
+#minimum_size 1366 768
+#maximum_width 1366
+alignment tr
+gap_x 15
+gap_y 30
+
+#3 Borders
+draw_shades yes
+draw_outline no
+draw_borders no
+
+## Colors
+default_color fff
+default_shade_color 000
+default_outline_color 000
+
+## Output
+TEXT
+${execi 180 declare -i n=$(( $RANDOM*10/32767 )); while [[ $n > 0 ]]; do echo; n=$(( $n - 1 )); done; fortune -a}
